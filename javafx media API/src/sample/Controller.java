@@ -20,6 +20,8 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
+//add a media file with the under the src/media package and replace it with file path name below
 String path = new File("src/media/How to Setup JavaFX 12 on IntelliJ IDEA.mp4").getAbsolutePath();
 me=new Media(new File(path).toURI().toString());
 mp = new MediaPlayer(me);
