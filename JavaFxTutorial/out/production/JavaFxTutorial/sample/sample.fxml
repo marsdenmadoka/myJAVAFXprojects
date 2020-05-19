@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?language JavaScript?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<VBox fx:id="vbox" layoutX="10.0" layoutY="10.0" prefHeight="250.0" prefWidth="300.0"
-      spacing="10" xmlns:fx="https://javafx.com/fxml/1" xmlns="https://javafx.com/javafx/2.2">
+
+<VBox fx:id="vbox" layoutX="10.0" layoutY="10.0" prefHeight="250.0" prefWidth="300.0" spacing="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <!--check the fx:controller="sample.controller this is telling our fxml that we will use our sample.controller
+     we will also call this fxml file in the Main-->
     <style>
         -fx-padding: 10;
         -fx-border-style: solid inside;
@@ -13,17 +17,23 @@
         -fx-border-color: blue;
     </style>
     <children>
-        <Label fx:id="inputLbl" alignment="CENTER_LEFT" cache="true" cacheHint="SCALE"
-               prefHeight="30.0" prefWidth="200.0" text="Please insert Your Input here:"
-               textAlignment="LEFT" />
+
+        <ImageView id="boxImage">
+        <image>
+            <Image url="/images/pic.jpeg" />
+        </image>
+    </ImageView>
+        <Label alignment="CENTER_LEFT" cache="true" cacheHint="SCALE" prefHeight="30.0" prefWidth="200.0" text="Please insert Your Input here:" textAlignment="LEFT" />
+
         <TextField fx:id="inputText" prefWidth="100.0" />
 
-        <Button fx:id="okBtn" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing=
-                "false" text="OK" textAlignment="CENTER" />
+        <Button fx:id="okBtn" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#printOutput" text="OK" textAlignment="CENTER" />
+        <!-- check the onAction printOut method refer to our controller remember to put #printOutput -->
 
-        <Label fx:id="outputLbl" alignment="CENTER_LEFT" cache="true" cacheHint="SCALE"
-               prefHeight="30.0" prefWidth="200.0" text="Your Input:" textAlignment="LEFT" />
+        <Label alignment="CENTER_LEFT" cache="true" cacheHint="SCALE" prefHeight="30.0" prefWidth="200.0" text="Your Input:" textAlignment="LEFT" />
+
         <TextArea fx:id="outputText" prefHeight="100.0" prefWidth="200.0" wrapText="true" />
+
     </children>
 
 </VBox>
